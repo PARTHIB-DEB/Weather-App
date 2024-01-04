@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Weather App</title>
 </head>
+
 <body class="flex justify-center mt-[4rem]">
-    <div class="bg-weather-card h-screen w-screen fixed pl-[3rem] pr-[3rem] sm:pl-[8rem] sm:pr-[8rem] md:pl-[10rem] md:pr-[10rem] lg:pl-[20rem] lg:pr-[20rem]">
-        <div class="text-white flex flex-col justify-evenly weather-card h-1/2 sm:h-[31%] lg:h-[50%] xl:h-[75%] w-full bg-black rounded-2xl shadow-black shadow-lg">
-            <p class="place text-3xl text-center">NEW DELHI</p>
-            <p class="weither text-2xl text-center">PARTLY CLOUDY</p>
-            <p class="image text-center">Image</p>
-            <p class="max-temp text-xl text-center">max</p>
-            <p class="max-temp text-xl text-center">max</p>
+    <div
+        class="bg-weather-card h-screen w-screen fixed pl-[3rem] pr-[3rem] sm:pl-[8rem] sm:pr-[8rem] md:pl-[10rem] md:pr-[10rem] lg:pl-[20rem] lg:pr-[20rem]">
+        <div class="text-white flex flex-col items-center justify-evenly weather-card h-1/2 sm:h-[31%] lg:h-[50%] xl:h-[75%] w-full bg-black rounded-2xl shadow-black shadow-lg">
+            <p class="place text-3xl text-center" id="place">NEW DELHI</p>
+            <div class="dt-time text-xl md:flex md:justify-evenly">
+                <label for="date">When : </label>
+                <select name="date" id="date" class="text-black bg-white rounded-lg p-0">
+                    <option value="Today" id="today"  class="text-center">Today</option>
+                    <option value="Yesterday" id="yest"  class="text-center">Yesterday</option>
+                    <option value="Tommorow" id="tom"  class="text-center">Tommorow</option>
+                </select>
+            </div>
+            <img src="static/sunny.png" alt="" id="st-image" height="50px" width="50px">
+            <p class="weather text-xl text-center" id="status">PARTLY CLOUDY</p>
+            <p class="wind text-lg text-center" id="wind">Wind : 5 kmph</p>
+            <p class="avg-temp text-lg text-center" id="max-t">temp (avg) : 25-30 deg</p>
         </div>
     </div>
 </body>
+
 </html>
