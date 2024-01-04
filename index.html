@@ -41,46 +41,37 @@
                 avgTemp = data.current.temp_c
                 document.getElementById("temp-val").textContent = avgTemp
                 dayStatus = data.current.is_day
-                if (avgTemp<21)
-                {
+                if (avgTemp < 21) {
                     document.getElementById("status-val").textContent = "Chilling Weather"
                     image.setAttribute("src", "static/cloudy-coldy.png")
                 }
                 else if (21 <= avgTemp <= 25) {
-                    if(dayStatus === 0)
-                    {
+                    if (dayStatus === 0) {
                         document.getElementById("status-val").textContent = "Cloudy Night"
                         image.setAttribute("src", "static/cloudy-night.png")
                     }
-                    else
-                    {
+                    else {
                         document.getElementById("status-val").textContent = "Cloudy Day"
                         image.setAttribute("src", "static/partly-sunny.png")
                     }
                 }
-                else if (25<=avgTemp<=35)
-                {
-                    if(dayStatus === 0)
-                    {
+                else if (25 <= avgTemp <= 35) {
+                    if (dayStatus === 0) {
                         document.getElementById("status-val").textContent = "Shining Night"
                         image.setAttribute("src", "static/shining-moon.png")
                     }
-                    else
-                    {
+                    else {
                         document.getElementById("status-val").textContent = "Bright Day"
                         image.setAttribute("src", "static/sunny.png")
                     }
 
                 }
-                else
-                {
-                    if(dayStatus === 0)
-                    {
+                else {
+                    if (dayStatus === 0) {
                         document.getElementById("status-val").textContent = "Shining Night"
                         image.setAttribute("src", "static/shining-moon.png")
                     }
-                    else
-                    {
+                    else {
                         document.getElementById("status-val").textContent = "Scorching Day"
                         image.setAttribute("src", "static/very-hot.png")
                     }
