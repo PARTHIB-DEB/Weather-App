@@ -17,7 +17,7 @@
                 <label class="place text-center" for="place">Place :</label>
                 <input type="text" placeholder="enter place" id="place" class="text-black w-[8rem] text-lg md:text-xl md:w-[15rem] rounded-lg pl-[1rem] md:pl-[2rem]">
             </div>
-            <img src="/sunny.png" alt="" id="st-image" height="50px" width="50px">
+            <img src="static/sunny.png" alt="" id="st-image" height="50px" width="50px">
             <p class="weather text-xl text-center" id="status">status : <span class="" id="status-val"></span> </p>
             <p class="wind text-lg text-center" id="wind">Wind (KPH) : <span class="" id="wind-val"></span> </p>
             <p class="avg-temp text-lg text-center" id="avg-t">temp (deg-cel) : <span class="" id="temp-val"></span></p>
@@ -44,18 +44,18 @@
                 if (avgTemp<21)
                 {
                     document.getElementById("status-val").textContent = "Chilling Weather"
-                    image.setAttribute("src", "/cloudy-coldy.png")
+                    image.setAttribute("src", "static/cloudy-coldy.png")
                 }
                 else if (21 <= avgTemp <= 25) {
                     if(dayStatus === 0)
                     {
                         document.getElementById("status-val").textContent = "Cloudy Night"
-                        image.setAttribute("src", "/cloudy-night.png")
+                        image.setAttribute("src", "static/cloudy-night.png")
                     }
                     else
                     {
                         document.getElementById("status-val").textContent = "Cloudy Day"
-                        image.setAttribute("src", "/partly-sunny.png")
+                        image.setAttribute("src", "static/partly-sunny.png")
                     }
                 }
                 else if (25<=avgTemp<=35)
@@ -63,12 +63,12 @@
                     if(dayStatus === 0)
                     {
                         document.getElementById("status-val").textContent = "Shining Night"
-                        image.setAttribute("src", "/shining-moon.png")
+                        image.setAttribute("src", "static/shining-moon.png")
                     }
                     else
                     {
                         document.getElementById("status-val").textContent = "Bright Day"
-                        image.setAttribute("src", "/sunny.png")
+                        image.setAttribute("src", "static/sunny.png")
                     }
 
                 }
@@ -77,12 +77,12 @@
                     if(dayStatus === 0)
                     {
                         document.getElementById("status-val").textContent = "Shining Night"
-                        image.setAttribute("src", "/shining-moon.png")
+                        image.setAttribute("src", "static/shining-moon.png")
                     }
                     else
                     {
                         document.getElementById("status-val").textContent = "Scorching Day"
-                        image.setAttribute("src", "/very-hot.png")
+                        image.setAttribute("src", "static/very-hot.png")
                     }
                 }
             })
