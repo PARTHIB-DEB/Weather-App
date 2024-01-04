@@ -13,22 +13,45 @@
         <div class="weather-card text-white flex flex-col items-center justify-evenly weather-card h-1/2 sm:h-[50%] md:h-[75%] w-full bg-black rounded-2xl shadow-black shadow-lg">
             <div class="Place-det text-xl md:text-2xl flex justify-evenly space-x-2">
                 <label class="place text-center" for="place">Place :</label>
-                <input type="text" placeholder="enter" id="place" class="text-black w-[8rem] md:w-[15rem] rounded-lg pl-[1rem] md:pl-[2rem]" >
+                <input type="text" placeholder="enter place" id="place" class="text-black w-[8rem] md:w-[15rem] rounded-lg pl-[1rem] md:pl-[2rem]">
             </div>
-            <div class="dt-time text-xl flex justify-evenly space-x-2">
-                <label for="date">When : </label>
-                <select name="date" id="date" class="text-black bg-white rounded-lg p-0">
-                    <option value="Today" id="today"  class="text-center">Today</option>
-                    <option value="Yesterday" id="yest"  class="text-center">Yesterday</option>
-                    <option value="Tommorow" id="tom"  class="text-center">Tommorow</option>
-                </select>
-            </div>
-            <img src="static/sunny.png" alt="" id="st-image" height="50px" width="50px">
+            <img src="" alt="" id="st-image" height="50px" width="50px">
             <p class="weather text-xl text-center" id="status">PARTLY CLOUDY</p>
-            <p class="wind text-lg text-center" id="wind">Wind : 5 kmph</p>
-            <p class="avg-temp text-lg text-center" id="max-t">temp (avg) : 25-30 deg</p>
+            <p class="wind text-lg text-center" id="wind">Wind : </p>
+            <p class="avg-temp text-lg text-center" id="avg-t">temp (avg) : </p>
+            <button class="h-[2rem] w-[5rem] bg-blue-500 text-white text-base rounded-lg" id="sub-btn">
+                <p class="text-center">Submit</p>
+            </button>
         </div>
     </div>
 </body>
-
+<script>
+    function getReport (place) {
+        let winSpd , avgTemp
+        let image = document.querySelector("img")
+        fetch(`https://api.weatherapi.com/v1/current.json?key=ae304c0cf0a14546b16100411240401&q=${place}&aqi=no`)
+        .then((response)=>{
+            return response.json()
+        })
+        .then((data)=>{
+            winSpd = data.current.wind_kph
+            avgTemp = data.current.temp_c
+            document.getElementById("wind").textContent=winSpd
+            document.getElementById("avg-t").textContent=avgTemp
+            if(19<= winSpd <=25)
+            {
+                image.setAttribute("src","static/very-cloudy.png")
+            }
+        })
+    }
+    let btn = document.getElementById("sub-btn")
+    document.getElementById("sub-btn").addEventListener("click",function(){
+        btn.style.backgroundColor="green"
+        let pl = document.getElementById("place").value
+        getReport(pl)
+        setTimeout(()=>{
+            btn.style.backgroundColor="rgb(59 130 246 / var(--tw-bg-opacity))"
+        },100)
+    })
+</script>
 </html>
