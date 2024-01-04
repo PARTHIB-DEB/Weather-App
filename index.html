@@ -8,12 +8,14 @@
     <title>Weather App</title>
 </head>
 
-<body class="flex justify-center mt-[4rem]">
-    <div
-        class="bg-weather-card h-screen w-screen fixed pl-[3rem] pr-[3rem] sm:pl-[8rem] sm:pr-[8rem] md:pl-[10rem] md:pr-[10rem] lg:pl-[20rem] lg:pr-[20rem]">
-        <div class="text-white flex flex-col items-center justify-evenly weather-card h-1/2 sm:h-[31%] lg:h-[50%] xl:h-[75%] w-full bg-black rounded-2xl shadow-black shadow-lg">
-            <p class="place text-3xl text-center" id="place">NEW DELHI</p>
-            <div class="dt-time text-xl md:flex md:justify-evenly">
+<body class="flex justify-center my-[4rem]">
+    <div class="bg-weather-card h-screen w-screen  pl-[3rem] pr-[3rem] sm:pl-[8rem] sm:pr-[8rem] md:pl-[10rem] md:pr-[10rem] lg:pl-[20rem] lg:pr-[20rem]">
+        <div class="weather-card text-white flex flex-col items-center justify-evenly weather-card h-1/2 sm:h-[50%] md:h-[75%] w-full bg-black rounded-2xl shadow-black shadow-lg">
+            <div class="Place-det text-xl md:text-2xl flex justify-evenly space-x-2">
+                <label class="place text-center" for="place">Place :</label>
+                <input type="text" placeholder="enter" id="place" class="text-black w-[8rem] md:w-[15rem] rounded-lg pl-[1rem] md:pl-[2rem]" >
+            </div>
+            <div class="dt-time text-xl flex justify-evenly space-x-2">
                 <label for="date">When : </label>
                 <select name="date" id="date" class="text-black bg-white rounded-lg p-0">
                     <option value="Today" id="today"  class="text-center">Today</option>
